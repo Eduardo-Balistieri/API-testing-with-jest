@@ -1,3 +1,3 @@
-# Testing an API with node/sqlite using jest
+# Testing an API with node/sequelize using jest
 
 ![Database diagram](./dbDiagram.png)

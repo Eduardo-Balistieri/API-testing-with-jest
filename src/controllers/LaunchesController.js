@@ -73,6 +73,9 @@ module.exports = class LaunchesController {
     async create(req, res) {
         const { year, success, failed, companyName } = req.body
 
+        if (!year || !success || !failed || !companyName || !companyName.trim())
+            return res.status(400).json({ error: 'Missing user information' })
+
         /***/
         let queryResult = await db.query(`SELECT * FROM companies WHERE company = "${companyName}"`, {
             model: Companies,
